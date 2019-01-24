@@ -1,0 +1,12 @@
+.items {}
+.items > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.items > main {}
+.items > main .list {}
+.items > main .list .listHeader {
+    display: flex;
+}
+.items > main .list .listRow {}

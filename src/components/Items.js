@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import ItemDetails from './ItemDetails';
+import './Items.css';
 
 const ITEMS_LIST = [
     {
@@ -12,7 +13,7 @@ const ITEMS_LIST = [
 
 class Items extends Component {
     renderItemsListHeaders = () => (
-        <div>
+        <div className='listHeader'>
             <div>Vendor</div>
             <div>Location</div>
             <div>Purchase date</div>
@@ -34,7 +35,7 @@ class Items extends Component {
     )
 
     renderItemRow = item => (
-        <div>
+        <div className='listRow'>
             <div>{item.vendor}</div>
             <div>{item.description}</div>
             <div>{item.unitBuyPrice}</div>
@@ -43,7 +44,7 @@ class Items extends Component {
     )
 
     renderItemsList = () => (
-        <div>
+        <div className='list'>
             {this.renderItemsListHeaders()}
             {ITEMS_LIST.map(item => this.renderItemRow(item))}
         </div>
@@ -53,16 +54,20 @@ class Items extends Component {
         const itemId = this.props.match.params.id;
         
         return (
-            <React.Fragment>
+            <div className='items'>
                 <header>
                     <h1>Items</h1>
-                    <Link to="/additem">Add Item</Link>
+                    <nav>
+                        <Link to="/additem">Add Item</Link>
+                        <Link to="/addinvoice">Add Invoice</Link>
+                        <Link to="/addreceipt">Add Receipt</Link>
+                    </nav>                   
                 </header>
-                <div>
+                <main>
                     {itemId && <ItemDetails itemId={itemId}/>}
                     {!itemId && this.renderItemsList()}
-                </div>
-            </React.Fragment>
+                </main>
+            </div>
 
         )
     }

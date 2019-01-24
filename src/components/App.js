@@ -19,10 +19,21 @@ class App extends Component {
               </li>
               <li>
                 <Link to="/items/">Items</Link>
-              </li>
-              <li>
-                <Link to="/additem/">Add Item</Link>
-              </li>
+                <ul>
+                  <li>
+                    <Link to="/additem/">Add Item</Link>
+                  </li>
+                  <li>
+                    <Link to="/addinvoice/">Add Invoice</Link>
+                  </li>
+                  <li>
+                    <Link to="/addreceipt/">Add Receipt</Link>
+                  </li>
+                  <li>
+                    <Link to="/addlot/">Add Lot</Link>
+                  </li>
+                </ul>
+              </li>              
               <li>
                 <Link to="/invoicesandreceipts/">Invoices & Receipts</Link>
               </li>
