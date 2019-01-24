@@ -40,6 +40,7 @@ class App extends Component {
           <main>
             <Route exact path="/" component={Items} />
             <Route exact path="/items" component={Items} />
+            <Route exact path="/items/:id" component={Items} />
             <Route path="/invoicesandreceipts" component={InvoicesAndReceipts} />
             <Route path="/additem" component={AddItem} />
           </main>
