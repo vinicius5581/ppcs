@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Items from './Items';
 import InvoicesAndReceipts from './InvoicesAndReceipts';
+import AddItem from './AddItem';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import './App.css';
@@ -20,6 +21,9 @@ class App extends Component {
                 <Link to="/items/">Items</Link>
               </li>
               <li>
+                <Link to="/additem/">Add Item</Link>
+              </li>
+              <li>
                 <Link to="/invoicesandreceipts/">Invoices & Receipts</Link>
               </li>
               <li>
@@ -37,6 +41,7 @@ class App extends Component {
             <Route exact path="/" component={Items} />
             <Route exact path="/items" component={Items} />
             <Route path="/invoicesandreceipts" component={InvoicesAndReceipts} />
+            <Route path="/additem" component={AddItem} />
           </main>
         </div>
       </Router>
